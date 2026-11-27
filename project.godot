@@ -13,6 +13,7 @@ config_version=5
 config/name="Servi Clicker - Una Gran Aventura"
 run/main_scene="uid://k0736ma4q7rf"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/image="uid://e00tjjxes5fr"
 config/icon="uid://bgf6pboftaf3v"
 
 [display]
