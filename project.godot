@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Nuevo Proyecto de Juego"
+config/name="Servi Clicker - Una Gran Aventura"
 run/main_scene="uid://k0736ma4q7rf"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://bgf6pboftaf3v"
 
 [display]
 
