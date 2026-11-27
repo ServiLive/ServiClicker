@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://k0736ma4q7rf"]
+
+[ext_resource type="Script" uid="uid://pwgloj5g7ke2" path="res://control.gd" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://bbn6ncogxuwwx" path="res://si.png" id="2_fj5cn"]
+[ext_resource type="Script" uid="uid://dtbibealx0b88" path="res://boton_clicker.gd" id="2_qtu10"]
+[ext_resource type="Script" uid="uid://bxksdvcopikst" path="res://doble_puntos.gd" id="3_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://bgf6pboftaf3v" path="res://servilive.png" id="3_fj5cn"]
+[ext_resource type="FontFile" uid="uid://ckb72nqixvtre" path="res://TVCD.ttf" id="3_iy58a"]
+[ext_resource type="Script" uid="uid://g1ije3dijwip" path="res://nodo_sonidos1.gd" id="4_ee4bf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iy58a"]
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6a6wx"]
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sky72"]
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eh0v1"]
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ytqx"]
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pxugv"]
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" unique_id=742790975]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="Panel" type="Panel" parent="." unique_id=1848542153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1180092575]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_fj5cn")
+expand_mode = 1
+
+[node name="container_puntaje" type="HBoxContainer" parent="." unique_id=1328751335]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 102.0
+offset_right = 671.0
+offset_bottom = 204.0
+
+[node name="puntaje" type="Label" parent="container_puntaje" unique_id=1965193076]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_iy58a")
+text = "Servi Puntaje:"
+label_settings = SubResource("LabelSettings_iy58a")
+
+[node name="cantidad" type="Label" parent="container_puntaje" unique_id=107845920]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_6a6wx")
+
+[node name="container_compra" type="HBoxContainer" parent="." unique_id=1137100220]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 225.0
+offset_right = 677.0
+offset_bottom = 265.0
+
+[node name="mult_texto" type="Label" parent="container_compra" unique_id=51359446]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_iy58a")
+text = "Coste:"
+label_settings = SubResource("LabelSettings_sky72")
+
+[node name="mult_precio" type="Label" parent="container_compra" unique_id=918817965]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_eh0v1")
+
+[node name="container_mult" type="HBoxContainer" parent="." unique_id=339512667]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 336.0
+offset_right = 670.0
+offset_bottom = 410.0
+
+[node name="texto_mult" type="Label" parent="container_mult" unique_id=1928845574]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_iy58a")
+text = "multiplicador:"
+label_settings = SubResource("LabelSettings_0ytqx")
+uppercase = true
+
+[node name="mult_cantidad" type="Label" parent="container_mult" unique_id=2125591978]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_iy58a")
+text = "0"
+label_settings = SubResource("LabelSettings_pxugv")
+
+[node name="nodo_sonidos1" type="Node" parent="." unique_id=940024111]
+script = ExtResource("4_ee4bf")
+
+[node name="doble_puntos" type="Button" parent="nodo_sonidos1" unique_id=793019231]
+unique_name_in_owner = true
+offset_left = 459.0
+offset_top = 212.0
+offset_right = 567.0
+offset_bottom = 279.0
+theme_override_colors/font_hover_color = Color(0.2556676, 1.4782845, 0.19097885, 1)
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.05490196, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_iy58a")
+text = "Reinicio"
+script = ExtResource("3_ee4bf")
+
+[node name="boton_clicker" type="Button" parent="nodo_sonidos1" unique_id=1630832542]
+offset_left = 462.0
+offset_top = 405.0
+offset_right = 689.0
+offset_bottom = 651.0
+icon = ExtResource("3_fj5cn")
+flat = true
+expand_icon = true
+script = ExtResource("2_qtu10")
+
+[connection signal="button_down" from="nodo_sonidos1/doble_puntos" to="nodo_sonidos1/doble_puntos" method="_on_button_down"]
+[connection signal="button_up" from="nodo_sonidos1/doble_puntos" to="nodo_sonidos1/doble_puntos" method="_on_button_up"]
+[connection signal="mouse_entered" from="nodo_sonidos1/doble_puntos" to="nodo_sonidos1/doble_puntos" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="nodo_sonidos1/doble_puntos" to="nodo_sonidos1/doble_puntos" method="_on_mouse_exited"]
+[connection signal="pressed" from="nodo_sonidos1/doble_puntos" to="." method="_on_doble_puntos_pressed"]
+[connection signal="button_down" from="nodo_sonidos1/boton_clicker" to="nodo_sonidos1/boton_clicker" method="_on_button_down"]
+[connection signal="button_up" from="nodo_sonidos1/boton_clicker" to="nodo_sonidos1/boton_clicker" method="_on_button_up"]
+[connection signal="mouse_entered" from="nodo_sonidos1/boton_clicker" to="nodo_sonidos1/boton_clicker" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="nodo_sonidos1/boton_clicker" to="nodo_sonidos1/boton_clicker" method="_on_mouse_exited"]
+[connection signal="pressed" from="nodo_sonidos1/boton_clicker" to="." method="_on_boton_clicker_pressed"]
+[connection signal="pressed" from="nodo_sonidos1/boton_clicker" to="nodo_sonidos1/boton_clicker" method="_on_pressed"]
